@@ -22,6 +22,7 @@ cuadrado.onclick = function () {
 
 	cuadradito.onclick = bold;
 
+	undoneTasks();
 };
 
 function bold (event){
@@ -51,6 +52,8 @@ function doneUndone (event){ //puede ser event o e
 	}else{
 		ListaDeClases.add('done');
 	};
+
+	undoneTasks();
 
 };
 
@@ -84,7 +87,11 @@ function undoneTasks() {
 
   var liNumber = document.getElementById('list').children.length;
 
-  document.getElementById('undone-tasks').innerHTML = "<span>" + liNumber + "</span>";
+  var liDone = document.getElementsByClassName('done').length;
+
+  liUndone = liNumber - liDone
+
+  document.getElementById('undone-tasks').innerHTML = "<span>" + liUndone + "</span>";
 
 }
 window.onload=undoneTasks;
