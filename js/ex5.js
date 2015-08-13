@@ -22,6 +22,8 @@ cuadrado.onclick = function () {
 
 	cuadradito.onclick = bold;
 
+	undoneTasks();
+
 };
 
 function bold (event){
@@ -52,6 +54,8 @@ function doneUndone (event){ //puede ser event o e
 		ListaDeClases.add('done');
 	};
 
+	undoneTasks();
+
 };
 
 var removeAll = document.getElementById('removeAll');
@@ -66,6 +70,8 @@ removeAll.onclick = function (){
 
 	}
 
+	undoneTasks();
+
 };
 
 var removeDone = document.getElementById('removeDone');
@@ -76,6 +82,8 @@ removeDone.onclick = function () {
 	while (done.length > 0) {
 		done[0].remove();
 	}
+
+	undoneTasks();
 
 }
 
